@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUp, faArrowUpRightFromSquare, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUpRightFromSquare, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 export default function Detail(props) {
   return (
@@ -14,7 +14,7 @@ export default function Detail(props) {
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </button>
         </div>
-        <img src={`https://cdn2.thecatapi.com/images/${props.imageName}.jpg`} alt={props.altName} className='rounded-tr-xl rounded-bl-xl' />
+        <img src={`https://cdn2.thecatapi.com/images/${props.imageName}.jpg`} alt={props.altName} className='rounded-tr-xl rounded-bl-xl max-h-80 w-full' />
         <div className='rounded-tl-xl p-5 relative -top-[4%] z-10'>
           <p className='text-sm text-[#265b5e] font-bold'>{props.name}</p>
           <p className='text-xs text-[#265b5e] pb-2'>{props.origin}</p>

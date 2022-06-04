@@ -4,11 +4,14 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Detail from './Detail'
 
 export default function Card(props) {
   const [dataById, setDataById] = useState("")
   const [detail, setDetail] = useState(false)
+
+  const navigate = useNavigate()
 
   const handleDetail = (e) => {
     console.log("e: ", e.target.id);
@@ -20,7 +23,7 @@ export default function Card(props) {
   }
 
   const handleExpand = () => {
-    console.log('diklik');
+    navigate("/cat-detail")
   }
 
   useEffect(() => {

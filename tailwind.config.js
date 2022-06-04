@@ -7,7 +7,10 @@ module.exports = {
       colors: {
         main: "#9dc3c4",
         primary: ""
-      }
+      },
+      fontFamily: {
+        body: ['BioRhyme']
+      },
     },
   },
   plugins: [],

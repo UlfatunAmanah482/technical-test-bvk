@@ -1,14 +1,8 @@
 import React from 'react'
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 export default function CatDetail() {
-  const dispatch = useDispatch();
   const cat = useSelector(state => state.cats.cat)
-
-  useEffect(() => {
-    console.log("cat:", cat);
-  }, [])
 
   return (
     <div className='container mx-auto p-[8%]'>

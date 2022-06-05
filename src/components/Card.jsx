@@ -1,8 +1,6 @@
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import axios from 'axios'
 import React from 'react'
-import { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -10,7 +8,6 @@ import { getDataById } from '../redux/actions/cats'
 import Detail from './Detail'
 
 export default function Card(props) {
-  const [dataById, setDataById] = useState("")
   const [detail, setDetail] = useState(false)
 
   const dispatch = useDispatch();
@@ -20,11 +17,6 @@ export default function Card(props) {
 
   const handleDetail = (e) => {
     console.log("e: ", e.target.id);
-    // axios.get(`https://api.thecatapi.com/v1/breeds/${e.target.id}`).then(res => {
-    //   setDataById(res.data)
-    //   console.log(res.data);
-    // })
-    // setDetail(true)
     dispatch(
       getDataById(e.target.id)
     )
@@ -34,10 +26,6 @@ export default function Card(props) {
   const handleExpand = () => {
     navigate("/cat-detail")
   }
-
-  // useEffect(() => {
-  //   console.log("cat:", cat);
-  // }, [cat])
 
   return (
     <section>

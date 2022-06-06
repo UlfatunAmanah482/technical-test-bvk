@@ -16,7 +16,6 @@ export default function Card(props) {
   const navigate = useNavigate()
 
   const handleDetail = (e) => {
-    console.log("e: ", e.target.id);
     dispatch(
       getDataById(e.target.id)
     )
@@ -26,6 +25,9 @@ export default function Card(props) {
   const handleExpand = () => {
     navigate("/cat-detail")
   }
+
+  // Note:
+  // Karena terdapat beberapa kesalahan dalam API, yaitu url image tidak valid, maka ada beberapa gambar yang tidak muncul di UI nya, sehingga menyebabkan terdapat error di console, tetapi halaman tetap dapat di render dengan baik.
 
   return (
     <section>
@@ -41,7 +43,7 @@ export default function Card(props) {
             <button>
               <FontAwesomeIcon icon={faHeart} />
             </button>
-            <button className='md:text-xs text-[10px] bg-[#104341] hover:bg-[#265b5e] text-white rounded-md px-2 py-1 my-1' onClick={handleDetail} id={props.id}>Read More</button>
+            <button className='md:text-xs text-[10px] bg-[#104341] hover:bg-[#265b5e] text-white rounded-md px-2 py-1 my-1' onClick={handleDetail} id={props.id}>View More</button>
           </div>
         </div>
       </div>

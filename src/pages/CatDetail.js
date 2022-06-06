@@ -1,6 +1,6 @@
+import React from 'react'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ export default function CatDetail() {
           <button onClick={handleBack}>
             <FontAwesomeIcon icon={faArrowLeft} />
           </button>
-          <img src={`https://cdn2.thecatapi.com/images/${cat.reference_image_id}.jpg`} alt={cat.alt_names} />
+          <img src={`https://cdn2.thecatapi.com/images/${cat.reference_image_id}.jpg`} alt={cat.alt_names} className='h-[400px] w-[600px]' />
         </div>
         <div className='px-4'>
           <p className='md:text-base text-sm text-[#265b5e] font-bold underline'>{cat.name}</p>

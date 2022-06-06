@@ -1,22 +1,32 @@
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 export default function CatDetail() {
   const cat = useSelector(state => state.cats.cat)
+  const navigate = useNavigate()
+  const handleBack = () => {
+    navigate("/")
+  }
 
   return (
-    <div className='container mx-auto p-[8%]'>
-      <div className='grid grid-cols-2 gap-4 items-center'>
+    <div className='h-screen bg-main flex items-center'>
+      <div className='container mx-auto p-[8%] grid sm:grid-cols-2 grid-cols-none sm:grid-rows-none grid-rows-2 gap-4 items-center'>
         <div>
+          <button onClick={handleBack}>
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </button>
           <img src={`https://cdn2.thecatapi.com/images/${cat.reference_image_id}.jpg`} alt={cat.alt_names} />
         </div>
-        <div>
-          <p className='text-sm text-[#265b5e] font-bold'>{cat.name}</p>
-          <p className='text-xs text-[#265b5e] pb-2'>{cat.origin}</p>
-          <h3 className='text-[#265b5e] font-bold'>Description</h3>
-          <p className='text-xs text-[#265b5e] pb-2'>{cat.description}</p>
-          <h3 className='text-[#265b5e] font-bold'>Temperament</h3>
-          <p className='text-xs text-[#265b5e]'>{cat.temperament}</p>
+        <div className='px-4'>
+          <p className='md:text-base text-sm text-[#265b5e] font-bold underline'>{cat.name}</p>
+          <p className='md:text-xs text-[10px] text-[#265b5e] pb-2 italic'>{cat.origin}</p>
+          <b className='md:text-sm text-xs text-[#265b5e]'>Description</b>
+          <p className='md:text-xs text-[10px] text-[#265b5e] pb-2'>{cat.description}</p>
+          <b className='md:text-sm text-xs text-[#265b5e]'>Temperament</b>
+          <p className='md:text-xs text-[10px] text-[#265b5e]'>{cat.temperament}</p>
         </div>
       </div>
     </div>

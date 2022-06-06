@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function Navbar(props) {
   const [visible, setVisible] = useState(false)
   return (
-    <div className='flex flex-wrap lg:flex-nowrap flex-row lg:flex-row-reverse justify-between items-center p-[4%]'>
+    <div className='flex flex-wrap lg:flex-nowrap flex-row lg:flex-row-reverse justify-between items-center py-[4%] lg:px-0 px-[4%]'>
       <button className="inline-flex lg:hidden text-4xl z-40" onClick={() => setVisible(!visible)}>
         <FontAwesomeIcon icon={faBars} />
       </button>
@@ -17,7 +17,7 @@ export default function Navbar(props) {
       </div>
       <div className={visible ? "flex lg:grow w-full lg:w-auto" : "hidden lg:flex lg:grow w-full lg:w-auto"}>
         <ul className='flex flex-col lg:flex-row items-center'>
-          <li className='lg:px-5 px-0 lg:py-0 py-3'>
+          <li className='lg:pr-5 pr-0 lg:py-0 py-3'>
             <button className='bg-white border rounded-full p-3 lg:w-[50px] w-[40px] lg:h-[50px] h-[40px] hover:bg-gray-200'>
               <img src="/images/cat.png" alt="cat" className='w-full h-full' />
             </button>

@@ -1,9 +1,8 @@
-import { GET_ALL_DATA, GET_DATA_BY_ID, SHOW_DATA } from "../constants/cats";
+import { GET_ALL_DATA, GET_DATA_BY_ID } from "../constants/cats";
 
 const initialState = {
   cats: [],
-  cat: "",
-  showDetail: false
+  cat: ""
 }
 
 export const catsReducer = (state = initialState, action) => {
@@ -19,12 +18,6 @@ export const catsReducer = (state = initialState, action) => {
         ...state,
         cat: action.payload.data
       }
-
-    case SHOW_DATA:
-    return {
-      ...state,
-      cats: [...state.cats, ...action.payload.data]
-    }
 
     default:
       return state;

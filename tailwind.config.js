@@ -5,8 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        main: "#9dc3c4",
-        primary: ""
+        main: "#9dc3c4"
       },
       fontFamily: {
         body: ['BioRhyme']
